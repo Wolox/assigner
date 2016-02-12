@@ -21,7 +21,6 @@ error "You must provide the pull request number" unless pull_request_number
 error "You must provide the GitHub access token using the env variable GITHUB_ACCESS_TOKEN" unless github_access_token
 
 client = Octokit::Client.new(access_token: github_access_token)
-reviewers = File.readlines(".reviewers.txt")
 assigned_reviewer =
   if ARGV[2]
     ARGV[2].split(",").sample
