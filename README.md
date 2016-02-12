@@ -3,7 +3,7 @@ Assigner lets assign code reviewer to your pull request.
 ## Setup
 
 ```
-git clone
+git clone git@github.com:Wolox/assigner.git
 cd assigner
 bundle install
 ```
@@ -38,3 +38,5 @@ before_install:
 after_success:
 - if [ "$TRAVIS_PULL_REQUEST" != "false" ]; then ruby assigner.rb $TRAVIS_REPO_SLUG $TRAVIS_PULL_REQUEST; fi
 ```
+
+Remember to set the `$GITHUB_ACCESS_TOKEN` using the `travis encrypt` command or using the Travis project's settings. For more info check the [docs](https://docs.travis-ci.com/user/encryption-keys/)
